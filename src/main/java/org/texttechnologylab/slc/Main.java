@@ -97,13 +97,13 @@ public class Main {
         composer.addDriver(new DUUIRemoteDriver());
 
 //        composer.add(new DUUIRemoteDriver.Component("http://localhost:10001").build());
-        composer.add(new DUUIDockerDriver.Component(SlcImage.spacy("0.3.1"))
+        composer.add(new DUUIDockerDriver.Component(SlcImage.spacy("0.5.0"))
                              .withGPU(true)
                              .build());
         composer.add(new DUUIUIMADriver.Component(createEngineDescription(
                 UriInfixXmiWriter.class,
                 UriInfixXmiWriter.PARAM_TARGET_LOCATION,
-                "/storage/xmi/Gutenberg/annotated/0.5.1/",
+                "/storage/xmi/Gutenberg/annotated/v0.5.1/",
                 UriInfixXmiWriter.PARAM_COMPRESSION,
                 CompressionMethod.BZIP2,
                 UriInfixXmiWriter.PARAM_OVERWRITE,
@@ -120,7 +120,7 @@ public class Main {
         composer.add(new DUUIUIMADriver.Component(createEngineDescription(
                 UriInfixXmiWriter.class,
                 UriInfixXmiWriter.PARAM_TARGET_LOCATION,
-                "/storage/xmi/Gutenberg/annotated/0.5.1/",
+                "/storage/xmi/Gutenberg/annotated/v0.5.1/",
                 UriInfixXmiWriter.PARAM_COMPRESSION,
                 CompressionMethod.BZIP2,
                 UriInfixXmiWriter.PARAM_OVERWRITE,
@@ -130,7 +130,7 @@ public class Main {
         )));
 
 ////        composer.add(new DUUIRemoteDriver.Component("http://localhost:10002").build());
-//        composer.add(new DUUIDockerDriver.Component(SlcImage.stanza("0.4.0"))
+//        composer.add(new DUUIDockerDriver.Component(SlcImage.stanza("0.5.0"))
 //                             .withGPU(true)
 //                             .build());
 //        composer.add(new DUUIUIMADriver.Component(createEngineDescription(
