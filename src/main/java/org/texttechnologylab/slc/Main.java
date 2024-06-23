@@ -97,7 +97,7 @@ public class Main {
         composer.addDriver(new DUUIRemoteDriver());
 
 //        composer.add(new DUUIRemoteDriver.Component("http://localhost:10001").build());
-        composer.add(new DUUIDockerDriver.Component(SlcImage.spacy("0.5.0"))
+        composer.add(new DUUIDockerDriver.Component(SlcImage.spacy("0.5.1"))
                              .withGPU(true)
                              .build());
         composer.add(new DUUIUIMADriver.Component(createEngineDescription(
@@ -130,7 +130,7 @@ public class Main {
         )));
 
 ////        composer.add(new DUUIRemoteDriver.Component("http://localhost:10002").build());
-//        composer.add(new DUUIDockerDriver.Component(SlcImage.stanza("0.5.0"))
+//        composer.add(new DUUIDockerDriver.Component(SlcImage.stanza("0.5.1"))
 //                             .withGPU(true)
 //                             .build());
 //        composer.add(new DUUIUIMADriver.Component(createEngineDescription(
