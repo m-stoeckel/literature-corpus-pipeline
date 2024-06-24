@@ -63,7 +63,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <test>Runner#testGerParCorFile, RunIntegrationTest</test>
+                    <test>TestSpacy</test>
                 </configuration>
             </plugin>
             <plugin>

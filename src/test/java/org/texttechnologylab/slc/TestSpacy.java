@@ -1,5 +1,7 @@
 package org.texttechnologylab.slc;
 
+import org.junit.jupiter.api.Test;
+
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Paragraph;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence;
@@ -19,7 +21,7 @@ import org.texttechnologylab.slc.io.UriInfixXmiWriter;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
-public class Main {
+public class TestSpacy {
 
 
     static class Image {
@@ -72,13 +74,16 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    @Test
+    public void main() throws Exception {
+        String root = "/storage/xmi/Gutenberg";
+      
         DUUICollectionReader readerEn = new DUUIFileReader(
-                "/storage/xmi/Gutenberg/html/v0.5.1/en/",
+                root + "/html/v0.5.1/en/",
                 ".xmi.bz2"
         );
         DUUICollectionReader readerDe = new DUUIFileReader(
-                "/storage/xmi/Gutenberg/html/v0.5.1/de/",
+                root + "/html/v0.5.1/de/",
                 ".xmi.bz2"
         );
         DUUIAsynchronousProcessor processor = new DUUIAsynchronousProcessor(
@@ -103,7 +108,7 @@ public class Main {
         composer.add(new DUUIUIMADriver.Component(createEngineDescription(
                 UriInfixXmiWriter.class,
                 UriInfixXmiWriter.PARAM_TARGET_LOCATION,
-                "/storage/xmi/Gutenberg/annotated/v0.5.1/",
+                root + "/annotated/v0.5.1/",
                 UriInfixXmiWriter.PARAM_COMPRESSION,
                 CompressionMethod.BZIP2,
                 UriInfixXmiWriter.PARAM_OVERWRITE,
@@ -120,7 +125,7 @@ public class Main {
         composer.add(new DUUIUIMADriver.Component(createEngineDescription(
                 UriInfixXmiWriter.class,
                 UriInfixXmiWriter.PARAM_TARGET_LOCATION,
-                "/storage/xmi/Gutenberg/annotated/v0.5.1/",
+                root + "/annotated/v0.5.1/",
                 UriInfixXmiWriter.PARAM_COMPRESSION,
                 CompressionMethod.BZIP2,
                 UriInfixXmiWriter.PARAM_OVERWRITE,
